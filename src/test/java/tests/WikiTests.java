@@ -21,7 +21,7 @@ public class WikiTests extends TestBase {
                 $$(id("org.wikipedia.alpha:id/view_news_fullscreen_link_card_list"))
                         .shouldHave(sizeGreaterThan(0)));
 
-        step("Check opening", () ->
+        step("Check item has text", () ->
                 $(className("android.widget.TextView")).shouldHave(text("A severe-rated earthquake strikes near Hualien City, Taiwan (damage pictured).")));
 
 

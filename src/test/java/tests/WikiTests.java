@@ -1,6 +1,7 @@
 package tests;
 
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
@@ -11,6 +12,7 @@ import static io.qameta.allure.Allure.step;
 
 public class WikiTests extends TestBase {
     @Test
+    @Tag("mobile")
     void successfulSearchTest() {
         step(" Click open article", () -> {
             $(id("org.wikipedia.alpha:id/horizontal_scroll_list_item_text")).click();

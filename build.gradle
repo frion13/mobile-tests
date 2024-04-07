@@ -57,6 +57,7 @@ dependencies {
             "io.qameta.allure:allure-rest-assured:$allureVersion",
             "org.slf4j:slf4j-simple:$slf4jVersion",
             "org.aeonbits.owner:owner:$ownerVersion",
+            "commons-io:commons-io:2.11.0",
             "org.assertj:assertj-core:$assertjVersion",
             "io.appium:java-client:$appiumVersion"
     )
@@ -77,5 +78,11 @@ tasks.withType(Test) {
 task mobile_test(type: Test) {
     useJUnitPlatform {
         includeTags("mobile")
+    }
+}
+
+task onboarding_test(type: Test) {
+    useJUnitPlatform {
+        includeTags("onboarding")
     }
 }

@@ -2,9 +2,8 @@ package configuration;
 
 import org.aeonbits.owner.Config;
 
-@Config.LoadPolicy(Config.LoadType.MERGE)
-@Config.Sources({"system:properties",
-        "classpath:config/bsconfig.properties"})
+@Config.Sources("classpath:config/${deviceHost}.properties")
+
 public interface BrowserstackConfig extends Config {
 
     @Key("app")

@@ -16,7 +16,7 @@ import static com.codeborne.selenide.Selenide.*;
 public class TestBase {
     @BeforeAll
     static void beforeAll() {
-        System.setProperty("deviceHost", System.getProperty("deviceHost", "emulator"));
+//        System.setProperty("deviceHost", System.getProperty("deviceHost", "emulator"));
         switch (System.getProperty("deviceHost")) {
             case "browserstack" -> Configuration.browser = BrowserstackDriver.class.getName();
             case "emulator" -> Configuration.browser = EmulatorDriver.class.getName();
@@ -35,9 +35,12 @@ public class TestBase {
     public void addAttachments() {
         String sessionId = Selenide.sessionId().toString();
         Attach.pageSource();
-        Attach.screenshotAs("screenshot");
-        closeWebDriver();
-        if (System.getProperty("deviceHost").equals("browserstack"))
+        if (System.getProperty("deviceHost").equals("browserstack")){
             Attach.addVideo(sessionId);
+        } else {
+            Attach.screenshotAs("screenshot");
+        }
+        closeWebDriver();
     }
 }
+

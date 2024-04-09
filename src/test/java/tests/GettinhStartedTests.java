@@ -16,7 +16,7 @@ public class GettinhStartedTests extends TestBase {
     @Tag("onboarding")
     @Test
     @DisplayName("Успешное отображение 4ех экранов онбординга при первом запуске")
-    void CheckOnboardingInfoTest() {
+    void checkOnboardingInfoTest() {
         step("Проверка заголовка первой страницы", () -> {
             $(id("org.wikipedia.alpha:id/primaryTextView"))
                     .shouldHave(text("The Free Encyclopedia …in over 300 languages"));
